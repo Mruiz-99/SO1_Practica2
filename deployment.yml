@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-practica2
+  namespace: practica2-201801329
+  labels:
+    app: grpc-practica2
+spec:
+  selector:
+    matchLabels:
+      app: grpc-practica2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grpc-practica2
+    spec:
+      hostname: grpc-pod-host
+      containers:
+        - name: grpc-client
+          image: mruiz01329/grpc-client-api
+          env:
+          - name: SERVER_ADDR
+            value: grpc-pod-host
+          - name: SERVER_PORT
+            value: "50051"
+          - name: CLIENTE_PORT
+            value: "2000"
+          ports:
+            - containerPort: 2000
+        - name: grpc-server
+          image: mruiz01329/grpc-server
+          env:
+          - name: PORT
+            value: "50051"
+          - name: BROKER_ADDR
+            value: "my-cluster-kafka-bootstrap.kafka:9092"
+          ports:
+            - containerPort: 50051

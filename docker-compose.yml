@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+        
+  golang_service:
+    image: mruiz01329/server_grpc_201701187:latest
+    ports:
+      - 50051:50051
+    networks:
+      - docker_xxx
+
+  node_client:
+    image: mruiz01329/api_client_grpc_201701187:latest
+    ports:
+      - 2000:2000
+    depends_on:
+      - golang_service
+    networks:
+      - docker_xxx    
+      
+networks:
+    docker_xxx:
+      driver: bridge
