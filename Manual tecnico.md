@@ -48,7 +48,7 @@ gcloud container clusters create cluster-practica2-mynor --num-nodes=1 --tags=al
 * Networks rules (allin, allout): --tags=allin,allout
 * Autenticacion con certificado: --enable-legacy-authorization
 
-Luego se creara archivos ***[KAFKA_SERVICE](../Kafka_Service.yml)***, ***[DEPLOYMENT_GRCP](../deployment_grcp.yml)*** y  ***[KAFKA_CONSUMER](../Kafka_consume.yml)***
+Luego se creara archivos Kafka_Service.yml, deployment.yml y Kafka_consume.yml.
 
 Antes de crear los archivos se debe ingresar los siguientes comandos:
 
