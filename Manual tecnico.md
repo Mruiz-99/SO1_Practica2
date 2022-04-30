@@ -1,4 +1,4 @@
-# <center>Practica #2 - Manual técnico </center>
+# Manual técnico </center>
 
 ### Servicios utilizados:
 * Clústeres de Kubernetes en Google Cloud Platform
@@ -194,4 +194,3 @@ Compilamos el archivo de la misma manera
 ```
 kubectl apply -f kafka-consumer.yml -n practica2-201801329
 ```
-Una vez tenemos el consume, nuestra aplicacion estar funcionando con kubernetes.
